@@ -1,0 +1,12 @@
+<input [(ngModel)]="character.name" placeholder="Name">
+<input [(ngModel)]="character.race" placeholder="Name">
+<input [(ngModel)]="character.armorClass" placeholder="Name" type="number">
+<input [(ngModel)]="character.background" placeholder="Name">
+
+<select>
+  <option *ngFor="let tradition of traditions">
+    {{ tradition.name }}
+  </option>
+</select>
+
+<button (click)="test()">Test</button>

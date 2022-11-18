@@ -33,7 +33,7 @@ export default interface Character {
   /**
    * Map from die sides to hit dice currenlty left
    */
-  hitDiceCurrent: Record<Die, number> 
+  hitDiceCurrent: { [key in Die]?: number }
 
   spellPool: {
     current: number
