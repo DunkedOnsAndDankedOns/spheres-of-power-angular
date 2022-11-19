@@ -19,6 +19,7 @@ interface Ability {
 }
 
 export default interface Sphere {
+  _id?: string
   name: string
   description: string
   talents: { 

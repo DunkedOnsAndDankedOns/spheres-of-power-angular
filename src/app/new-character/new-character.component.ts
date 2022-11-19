@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Character from 'src/models/Character';
 import Tradition from 'src/models/Tradition';
@@ -11,7 +11,7 @@ import { TraditionService } from '../tradition.service';
   styleUrls: ['./new-character.component.scss']
 })
 export class NewCharacterComponent implements OnInit {
-  character: Character = {
+  @Input() character: Character = {
     name: 'New Character',
     race: '',
     speed: {
@@ -69,7 +69,7 @@ export class NewCharacterComponent implements OnInit {
   }
 
   create() {
-    this.characterService.create(this.character as Required<Character>)
+    this.characterService.create(this.character).subscribe(res => console.log(res))
   }
 
 }

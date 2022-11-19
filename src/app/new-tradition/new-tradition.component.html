@@ -1,0 +1,23 @@
+<div>
+  <input [(ngModel)]="tradition.name" placeholder="Name">
+
+  <select [(ngModel)]="tradition.keyAbility">
+    <option *ngFor="let ability of keyAbilities" [value]="ability">
+      {{ ability }}
+    </option>
+  </select>
+
+  <div *ngFor="let boon of boons">
+    <input [(ngModel)]="boon.key" placeholder="Name">
+    <input [(ngModel)]="boon.value" placeholder="Description">
+  </div>
+  <button (click)="newBoon()">Add Boon</button>
+
+  <div *ngFor="let drawback of drawbacks">
+    <input [(ngModel)]="drawback.key" placeholder="Name">
+    <input [(ngModel)]="drawback.value" placeholder="Description">
+  </div>
+  <button (click)="newDrawback()">Add Drawback</button>
+
+  <button (click)="create()">Test</button>
+</div>
