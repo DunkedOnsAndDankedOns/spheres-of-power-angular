@@ -4,3 +4,5 @@ export const arrayToRecord = <K extends string | number | symbol,V>(arr: {key: K
     return acc
   }, {} as Record<K,V>)
 }
+
+export const BASEURL = 'http://localhost:3000'

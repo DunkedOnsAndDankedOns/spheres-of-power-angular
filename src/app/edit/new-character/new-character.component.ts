@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Character from 'src/models/Character';
 import Tradition from 'src/models/Tradition';
-import { CharacterService } from '../character.service';
-import { TraditionService } from '../tradition.service';
+import { CharacterService } from '../../services/character.service';
+import { TraditionService } from '../../services/tradition.service';
 
 @Component({
   selector: 'app-new-character',

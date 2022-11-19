@@ -4,11 +4,11 @@ import CharacterClass from 'src/models/CharacterClass';
 import Item from 'src/models/Item';
 import Sphere from 'src/models/Sphere';
 import Tradition from 'src/models/Tradition';
-import { CharacterService } from '../character.service';
-import { ClassService } from '../class.service';
-import { ItemService } from '../item.service';
-import { SphereService } from '../sphere.service';
-import { TraditionService } from '../tradition.service';
+import { CharacterService } from '../services/character.service';
+import { ClassService } from '../services/class.service';
+import { ItemService } from '../services/item.service';
+import { SphereService } from '../services/sphere.service';
+import { TraditionService } from '../services/tradition.service';
 
 @Component({
   selector: 'app-home',

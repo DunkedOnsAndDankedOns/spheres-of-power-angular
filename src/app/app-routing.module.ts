@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CharacterClassComponent } from './character-class/character-class.component';
-import { CharacterComponent } from './character/character.component';
+import { NewCharacterComponent } from './edit/new-character/new-character.component';
+import { NewClassComponent } from './edit/new-class/new-class.component';
+import { NewItemComponent } from './edit/new-item/new-item.component';
+import { NewSphereComponent } from './edit/new-sphere/new-sphere.component';
+import { NewTraditionComponent } from './edit/new-tradition/new-tradition.component';
+import { CharacterClassComponent } from './display/character-class/character-class.component';
+import { CharacterComponent } from './display/character/character.component';
 import { HomeComponent } from './home/home.component';
-import { ItemComponent } from './item/item.component';
-import { NewCharacterComponent } from './new-character/new-character.component';
-import { NewClassComponent } from './new-class/new-class.component';
-import { NewItemComponent } from './new-item/new-item.component';
-import { NewSphereComponent } from './new-sphere/new-sphere.component';
-import { NewTraditionComponent } from './new-tradition/new-tradition.component';
-import { SphereComponent } from './sphere/sphere.component';
-import { TraditionComponent } from './tradition/tradition.component';
+import { ItemComponent } from './display/item/item.component';
+import { SphereComponent } from './display/sphere/sphere.component';
+import { TraditionComponent } from './display/tradition/tradition.component';
 
 const routes: Routes = [
   { path: 'item/new', component: NewItemComponent },

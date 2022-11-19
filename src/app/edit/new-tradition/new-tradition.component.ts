@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import Tradition from 'src/models/Tradition';
 import Stat from 'src/types/Stat';
-import { TraditionService } from '../tradition.service';
-import { arrayToRecord } from '../util';
+import { TraditionService } from '../../services/tradition.service';
+import { arrayToRecord } from '../../util';
 
 @Component({
   selector: 'app-new-tradition',
