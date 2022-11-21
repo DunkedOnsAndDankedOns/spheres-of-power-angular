@@ -50,6 +50,7 @@ export default interface Character {
    * Map from class id to number of levels
    */
   levels: Record<string, Level>
+  classIds: string[]
 
   sphereIds: string[]
   spheres?: Sphere[]

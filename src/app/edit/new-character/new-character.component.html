@@ -9,4 +9,14 @@
   </option>
 </select>
 
+<div *ngFor="let id of character.classIds; let idx = index">
+  <select [(ngModel)]="character.classIds[idx]">
+    <option *ngFor="let characterClass of classes" [value]="characterClass._id">
+      {{ characterClass.name }}
+    </option>
+  </select>
+  <input [(ngModel)]="character.levels[id]" placeholder="Level" type="number" />
+</div>
+<button (click)="addClass()">Add class</button>
+
 <button (click)="create()">Create!</button>

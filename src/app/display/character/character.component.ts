@@ -9,7 +9,7 @@ import { CharacterService } from '../../services/character.service';
   styleUrls: ['./character.component.scss']
 })
 export class CharacterComponent implements OnInit {
-  character: Character | undefined
+  character?: Character
 
   constructor(
     private route: ActivatedRoute,

@@ -1,1 +1,23 @@
-<p *ngIf="character">{{ character.tradition?.name }}</p>
+<div *ngIf="character">
+  <p>{{ character.name }}</p>
+  <p>{{ character.race }}</p>
+  <p>{{ character.notes }}</p>
+  <p>{{ character.speed.Walk }}</p>
+  <div>
+    <p>{{ character.currency.cp }}</p>
+    <p>{{ character.currency.sp }}</p>
+    <p>{{ character.currency.ep }}</p>
+    <p>{{ character.currency.gp }}</p>
+    <p>{{ character.currency.pp }}</p>
+  </div>
+  <div class="stats">
+    <p>Strength: {{ character.stats.Strength.score }} ({{ character.stats.Strength.modifier }})</p>
+    <p>Dexterity: {{ character.stats.Dexterity.score }} ({{ character.stats.Dexterity.modifier }})</p>
+    <p>Constitution: {{ character.stats.Constitution.score }} ({{ character.stats.Constitution.modifier }})</p>
+    <p>Wisdom: {{ character.stats.Wisdom.score }} ({{ character.stats.Wisdom.modifier }})</p>
+    <p>Intelligence: {{ character.stats.Intelligence.score }} ({{ character.stats.Intelligence.modifier }})</p>
+    <p>Charisma: {{ character.stats.Charisma.score }} ({{ character.stats.Charisma.modifier }})</p>
+  </div>
+
+  <a [routerLink]="['/character/new']">Edit</a>
+</div>
