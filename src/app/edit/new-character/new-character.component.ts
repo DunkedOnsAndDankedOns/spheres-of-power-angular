@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ClassService } from 'src/app/services/class.service';
 import Character from 'src/models/Character';
+import CharacterClass from 'src/models/CharacterClass';
 import Tradition from 'src/models/Tradition';
-import { CharacterService } from '../character.service';
-import { TraditionService } from '../tradition.service';
+import { CharacterService } from '../../services/character.service';
+import { TraditionService } from '../../services/tradition.service';
 
 @Component({
   selector: 'app-new-character',
@@ -11,7 +13,7 @@ import { TraditionService } from '../tradition.service';
   styleUrls: ['./new-character.component.scss']
 })
 export class NewCharacterComponent implements OnInit {
-  character: Character = {
+  @Input() character: Character = {
     name: 'New Character',
     race: '',
     speed: {
@@ -27,6 +29,7 @@ export class NewCharacterComponent implements OnInit {
       Charisma: { score: 10, modifier: 0 },
     },
     levels: {},
+    classIds: [],
     currency: {},
     hitPoints: {
       rolled: 0,
@@ -46,10 +49,12 @@ export class NewCharacterComponent implements OnInit {
   }
 
   traditions: Tradition[] = []
+  classes: CharacterClass[] = []
 
   constructor(
     private characterService: CharacterService,
     private traditionService: TraditionService,
+    private classService: ClassService,
     private router: Router,
   ) {}
 
@@ -62,6 +67,18 @@ export class NewCharacterComponent implements OnInit {
       }
       this.traditions = traditions.result
     })
+    this.classService.getAll().subscribe(classes => {
+      if (!classes.result || !classes.result.length) {
+        this.router.navigate(['home'])
+        alert('You need to create a class first')
+        return
+      }
+      this.classes = classes.result
+    })
+  }
+
+  addClass() {
+    this.character.classIds.push('')
   }
 
   test() {
@@ -69,7 +86,7 @@ export class NewCharacterComponent implements OnInit {
   }
 
   create() {
-    this.characterService.create(this.character as Required<Character>)
+    this.characterService.create(this.character).subscribe(res => console.log(res))
   }
 
 }

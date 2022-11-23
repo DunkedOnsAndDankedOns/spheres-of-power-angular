@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import Character from 'src/models/Character';
-import { CharacterService } from '../character.service';
+import { CharacterService } from '../../services/character.service';
 
 @Component({
   selector: 'app-character',
@@ -9,7 +9,7 @@ import { CharacterService } from '../character.service';
   styleUrls: ['./character.component.scss']
 })
 export class CharacterComponent implements OnInit {
-  character: Character | undefined
+  character?: Character
 
   constructor(
     private route: ActivatedRoute,

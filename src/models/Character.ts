@@ -4,13 +4,18 @@ import Language from "src/types/Language"
 import Level from "src/types/Level"
 import Movement from "src/types/Movement"
 import Stat from "src/types/Stat"
+import Item from "./Item"
+import Sphere from "./Sphere"
+import Tradition from "./Tradition"
 
 export default interface Character {
+  _id?: string
   name: string
   armorClass: number
 
   stats: Record<Stat, { score: number, modifier: number }>
   traditionId: string
+  tradition?: Tradition
 
   speed: { [key in Movement]?: number }
   
@@ -22,6 +27,7 @@ export default interface Character {
   currency: { [key in Currency]?: number }
 
   inventoryItemIds: string[]
+  inventoryItems?: Item[]
   
   hitPoints: {
     current: number
@@ -44,8 +50,10 @@ export default interface Character {
    * Map from class id to number of levels
    */
   levels: Record<string, Level>
+  classIds: string[]
 
   sphereIds: string[]
+  spheres?: Sphere[]
 
   alignment?: string
   backstory?: string

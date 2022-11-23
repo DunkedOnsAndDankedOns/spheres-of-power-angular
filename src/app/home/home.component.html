@@ -2,11 +2,12 @@
 <a [routerLink]="['/character/new']">New</a>
 <ul>
   <li *ngFor="let character of characters">
-    <p>{{ character.name }}</p>
+    <a [routerLink]="['/character', character._id]">{{ character.name }}</a>
   </li>
 </ul>
 
 <h2>Items</h2>
+<a [routerLink]="['/item/new']">New</a>
 <ul>
   <li *ngFor="let item of items">
     <p>{{ item.name }}</p>
@@ -14,6 +15,7 @@
 </ul>
 
 <h2>Spheres</h2>
+<a [routerLink]="['/sphere/new']">New</a>
 <ul>
   <li *ngFor="let sphere of spheres">
     <p>{{ sphere.name }}</p>
@@ -21,6 +23,7 @@
 </ul>
 
 <h2>Classes</h2>
+<a [routerLink]="['/class/new']">New</a>
 <ul>
   <li *ngFor="let class of classes">
     <p>{{ class.name }}</p>
@@ -28,9 +31,10 @@
 </ul>
 
 <h2>Traditions</h2>
+<a [routerLink]="['/tradition/new']">New</a>
 <ul>
   <li *ngFor="let tradition of traditions">
-    <p>{{ tradition.name }}</p>
+    <a [routerLink]="['/tradition', tradition._id]">{{ tradition.name }}</a>
   </li>
 </ul>
 

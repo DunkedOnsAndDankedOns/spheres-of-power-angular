@@ -9,6 +9,7 @@ interface Feature {
 }
 
 export default interface CharacterClass {
+  _id?: string
   name: string
   hitDie: Die
 

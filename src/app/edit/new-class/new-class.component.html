@@ -1,0 +1,23 @@
+<div>
+  <input [(ngModel)]="characterClass.name" placeholder="Name">
+
+  <select [(ngModel)]="characterClass.hitDie">
+    <option *ngFor="let die of dice" [value]="die">
+      d{{ die }}
+    </option>
+  </select>
+
+  <div *ngFor="let level of ">
+    <input [(ngModel)]="boon.key" placeholder="Name">
+    <input [(ngModel)]="boon.value" placeholder="Description">
+  </div>
+  <button (click)="newBoon()">Add Boon</button>
+  
+  <!-- <div *ngFor="let drawback of drawbacks"> -->
+  <!--   <input [(ngModel)]="drawback.key" placeholder="Name"> -->
+  <!--   <input [(ngModel)]="drawback.value" placeholder="Description"> -->
+  <!-- </div> -->
+  <!-- <button (click)="newDrawback()">Add Drawback</button> -->
+
+  <button (click)="test()">Create</button>
+</div>
